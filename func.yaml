@@ -1,0 +1,5 @@
+name: hello_fn
+version: 0.0.3
+runtime: go
+entrypoint: ./func
+format: json
