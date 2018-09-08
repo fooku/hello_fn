@@ -1,7 +1,28 @@
 # Fn Project with Golang 
 See https://github.com/fnproject/tutorials/blob/master/Introduction/README.md for guide more information.  
-# First Function with hello FN
+# First Function with hello FN ❤️
+### install fn 
+>```sh
+>  brew install fn 
+>```
+or
+>```sh
+>  curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh
+>```
 
+### รัน Fn Server 
+>```sh
+>  fn start
+>```
+### สร้าง Project hello_fn ด้วย 
+>```sh
+>  fn init --runtime go hello_fn
+>```
+### เข้าไปใน hello_fn
+>```sh
+>  cd hello_fn
+>```
+### เปลียน name จาก world เป็น fn
 >```sh
 > cat func.go
 >```
@@ -37,3 +58,21 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 	json.NewEncoder(out).Encode(&msg)
 }
 ```
+
+### deploy hello_fn เข้า fn
+>```sh
+> fn deploy --app myapp --local
+>```
+
+### เมื่อเสร็จแล้วเรียกฟังชั่นด้วยคำสัง
+>```sh
+> curl http://localhost:8080/r/myapp/hello_fn
+> or:
+> fn call myapp /hello_fn
+>```
+
+จะได้ผลลัพท์แบบนี้
+>```sh
+> {"message":"Hello FN"}
+>```
+
