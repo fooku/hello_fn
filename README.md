@@ -1,4 +1,6 @@
 # Fn Project with Golang 
+เนื่อจากได้อ่านบทความของอาจารย์ Chanwit Kaewkasi > https://sites.google.com/site/chanwit/blogs/fnproject-for-implementing-faas
+
 See https://github.com/fnproject/tutorials/blob/master/Introduction/README.md for guide more information.  
 # First Function with hello FN ❤️
 ### install fn 
