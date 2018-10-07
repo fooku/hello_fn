@@ -71,6 +71,8 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 > curl http://localhost:8080/r/myapp/hello_fn
 > or:
 > fn call myapp /hello_fn
+> or:
+> curl -H "Content-Type: application/json" -d '{"name":"Bob"}' http://localhost:8080/r/myapp/hello_fn
 >```
 
 จะได้ผลลัพท์แบบนี้
@@ -78,3 +80,7 @@ func myHandler(ctx context.Context, in io.Reader, out io.Writer) {
 > {"message":"Hello FN"}
 >```
 
+ถึงตรงนี้หลายคนก็อยากจะดูหน้า monitoring ละ ซึ่งมันจะต้องใช้ docker image อีกตัวนึง ก็ตามนี้เลยครับ
+>```sh
+> docker run --rm -it --link fnserver:api -p 4000:4000 -e "FN_API_URL=http://api:8080" fnproject/ui
+>```
